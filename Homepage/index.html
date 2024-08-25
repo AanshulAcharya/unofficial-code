@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Updates</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="login-btn">Log in</button>
+                <button class="signup-btn">Sign up</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile">
+            <div class="profile-info">
+                <h1>Welcome!</h1>
+                <p>Ready to enhance your learning and evaluating journey?</p>
+                
+            </div>
+            <div class="profile-image">
+                <img src="profile.jpg" alt="Layla">
+            </div>
+        </section>
+
+        <section class="extra-info">
+            <div class="teacher">
+                <h2>Are you a Teacher?</h2>
+                <div class="teacher-img">
+                    <img src="https://i.pinimg.com/564x/cf/66/33/cf66334166ddd4c120148dc07c492449.jpg" alt="teacher">
+                </div>
+                <button class="view-more">Sign up</button>
+            </div>
+
+            <div class="student">
+                <h2>Are you a Student?</h2>
+                <div class="student-img">
+                    <img src="https://i.pinimg.com/564x/7f/fc/66/7ffc66e170f61b8714c0c72227a982e0.jpg" alt="student">
+                </div>
+                <button class="view-more">Sign up</button>
+            </div>
+        </section>
+        <div class="about">
+            <h2>About</h2>
+            <p>Our platform is dedicated to simplifying the grading and feedback process for educators and students alike. We provide teachers with the tools to streamline assigning grades and delivering feedback, saving time and enhancing accuracy. For students, our platform ensures they receive clear insights into their progress, making it easier to understand their performance and grow academically. We aim to create an effortless experience for educators and a transparent, supportive environment for students.</p>
+        </div>
+        <div class="updates">
+            <h2>Updates</h2>
+            <p>All updates on results and exams will be shown here</p>
+            <a href="https://www.sakec.ac.in/" class="btn">Go to official sakec website</a>
+        </div>    
+    </main>
+    <footer>
+        <h2>Contact us:</h2>
+        <div class="contact">
+            
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                    
+                </form>
+        </div>
+        <div class="container">
+            <p>&copy; 2024 XYZ College. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

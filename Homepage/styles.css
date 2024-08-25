@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f7;
+    color: #333;
+    padding: 0;
+    margin: 0;
+    cursor: default; /* Ensures default cursor on the body */
+}
+
+header {
+    background-color: #1a2838;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0.7, 0, 0.7);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+nav .logo img {
+    height: 80px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-left: 350px;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: white; 
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer; /* Ensures pointer cursor for links */
+}
+
+nav .auth-buttons {
+    margin-left: auto; /* Moves the buttons to the right side */
+    display: flex;
+    gap: 15px;
+}
+
+.login-btn, .signup-btn {
+    padding: 8px 16px;
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #2f4156;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer; /* Ensures pointer cursor for buttons */
+}
+
+.login-btn:hover, .signup-btn:hover {
+    background-color: #2f4156;
+    color: #fff;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6f0ff; /* Light blue background */
+    height: 400px;
+    padding: 30px;
+    border-radius: 10px 60px 30px;
+    margin: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.profile-info {
+    max-width: 70%;
+}
+
+.profile-info h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.profile-info p {
+    font-size: 18px;
+    color: #666;
+}
+
+.profile-image img {        /* welcome ke side ka img*/
+    width: 400px;
+    height: 380px; 
+     
+}
+
+.extra-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px;
+}
+
+.teacher, .student {
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    width: 48%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    text-align: right;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.teacher-img, .student-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.teacher-img img, .student-img img {
+    width: 300px;
+    height: 300px;
+   
+}
+
+.view-more {
+    margin-top: 20px;
+    margin-left: 450px;
+    padding: 10px 20px;
+    background-color: #2f4156;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer; /* Ensures pointer cursor for view more button */
+}
+
+.view-more:hover {
+    background-color: #5b4ebd;
+}
+
+.student ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.student li {
+    margin-bottom: 10px;
+}
+
+.student a {
+    text-decoration: none;
+    color: #6a5acd;
+    font-weight: bold;
+    cursor: pointer; /* Ensures pointer cursor for student links */
+}
+
+
+.about, .updates {
+    background-color: #f5efeb; 
+    border: 1px solid #ddd; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); 
+    
+    margin: 20px ; 
+    line-height: 1.6; 
+}
+
+.about h2, .updates h2 {
+    font-size: 28px;
+    color: #333; 
+    margin-bottom: 15px;
+}
+
+.about p , .about p{
+    font-size: 18px; 
+    color: #555; 
+    margin-bottom: 10px;
+}
+footer {
+    background-color: #1a2838; 
+    color: #fff; /* White text color */
+    text-align: left;
+    padding: 20px ; /* Increased padding */
+    width: 100%;
+    height: auto; /* Adjust height to fit content */
+}
+.footer h2{
+    text-align: left;
+}
+
+.contact {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
+    margin: 30px auto;
+}
+
+.contact h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #6a5acd; /* Soft purple color */
+}
+
+.submit-btn {
+    background-color: #1a2838;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #5a4cbc;
+}
+
+.container p{
+    text-align: center;
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    nav .nav-links {
+        margin-left: 250px; /* Adjust margin for smaller screens */
+    }
+
+    .view-more {
+        margin-left: 250px; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 992px) {
+    nav .nav-links {
+        margin-left: 150px; /* Adjust margin for smaller screens */
+        gap: 10px;
+    }
+
+    .profile {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    .profile-image img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .profile-info h1 {
+        font-size: 36px;
+    }
+
+    .profile-info p {
+        font-size: 16px;
+    }
+
+    .view-more {
+        margin-left: 0; /* Center the button on smaller screens */
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .auth-buttons {
+        margin-left: 0; /* Adjust the position for smaller screens */
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 0; /* Center the links on smaller screens */
+        margin-top: 10px;
+    }
+
+    .extra-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .teacher, .student {
+        width: 100%;
+    }
+
+    .view-more {
+        width: 100%;
+        margin-left: 0; /* Center the button on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    nav .nav-links li a {
+        font-size: 18px;
+    }
+
+    .profile-info h1 {
+        font-size: 28px;
+    }
+
+    .profile-info p {
+        font-size: 14px;
+    }
+
+    .about h2, .updates h2 {
+        font-size: 24px;
+    }
+
+    .about p , .about p {
+        font-size: 16px;
+    }
+
+    .contact h1 {
+        font-size: 24px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
