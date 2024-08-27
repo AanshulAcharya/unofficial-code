@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Navigation</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#home">THEORY</a></li>
+            </ul>
+        </div>    
+            <div class="nav-buttons">
+                <a href="home.html" class="btn nav-btn">Log out</a>
+            </div>
+    </nav>
+    
+    <h1>Select an Assessment</h1>
+    
+    <label for="mainDropdown">Choose a category:</label>
+    <select id="mainDropdown" onchange="handleMainDropdown()">
+        <option value="">--Select--</option>
+        <option value="MSE">MSE</option>
+        <option value="CCE">CCE</option>
+    </select>
+
+    <div id="cceOptions" style="display:none;">
+        <label for="cceDropdown">Choose an option:</label>
+        <select id="cceDropdown" onchange="handleCCEOptions()">
+            <option value="">--Select--</option>
+            <option value="Rubrics">Rubrics</option>
+            <option value="Attendance">Attendance</option>
+        </select>
+    </div>
+
+    <div id="rubricsOptions" style="display:none;">
+        <div class="rubric-row">
+            <label for="rubric1Dropdown">Choose Rubric 1:</label>
+            <label for="rubric2Dropdown" style="margin-left: 10px;">Choose Rubric 2:</label>
+        </div>
+        <div class="rubric-row">
+            <select id="rubric1Dropdown" onchange="checkDuplicates()">
+                <option value="">--Select--</option>
+                <option value="Presentation">Power Point Presentation</option>
+                <option value="Discussion"> Group Discussion</option>
+                <option value="Seminar">Seminar Presentation</option>
+                <option value="Quiz">Quiz</option>
+                <option value="Case Study">Case Study</option>
+                <option value="Design">Design Thinking</option>
+                <option value="Innovation">Innovation</option>
+            </select>
+    
+            <select id="rubric2Dropdown" onchange="checkDuplicates()">
+                <option value="">--Select--</option>
+                <option value="Presentation">Power Point Presentation</option>
+                <option value="Discussion"> Group Discussion</option>
+                <option value="Seminar">Seminar Presentation</option>
+                <option value="Quiz">Quiz</option>
+                <option value="Case Study">Case Study</option>
+                <option value="Design">Design Thinking</option>
+                <option value="Innovation">Innovation</option>
+            </select> 
+            <p id="errorMessage" style="color:red; display:none;">Please choose different options.</p> 
+        </div>
+       
+    
+        <div class="button-row">
+            <button id="fixButton" onclick="fixChoices()">Fix Choices</button>
+            <button id="resetButton" onclick="resetSelections()">Reset</button>
+        </div>
+    
+        <div id="goToButtons" style="display:none;">
+            <button id="goToRubric1Button" onclick="goToPage('rubric1')">Go to Rubric 1</button>
+            <button id="goToRubric2Button" onclick="goToPage('rubric2')">Go to Rubric 2</button>
+        </div>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>
