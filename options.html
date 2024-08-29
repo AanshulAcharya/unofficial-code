@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Navigation</title>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #1a2a38; /* Navy for navigation background */
+    height:100px;
+    width: 100%;
+    font-size: 18px;
+    padding: 15px 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0.7, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 20px; /* Space between navigation items */
+}
+
+.nav-links li a {
+    color: #fff; /* White text color */
+    font-family: 'Poppins',sans-serif;
+    font-size: 2em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/*.nav-links li a:hover {
+    color: #00b4d8; /* Sky blue on hover 
+}*/
+
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-btn {
+    background-color: #567c8d; /* Navy background */
+    color: #fff; /* White text color */
+    padding: 8px 16px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}     
+
+.nav-btn:hover {
+    background-color: #00b4d8; /* Sky blue on hover */
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+h1 {
+    font-size: 2.4rem;
+    color: #343a40;
+    margin-bottom: 1.3rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #495057;
+}
+
+select {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.6rem;
+    margin-bottom: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #495057;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#errorMessage {
+    text-align: center;
+    font-size: 1rem;
+    color: #dc3545;
+    margin-top: 1rem;
+    display: none;
+}
+
+#rubricsOptions {
+    text-align: center;
+}
+
+.rubric-row, .button-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.rubric-row select, .button-row button {
+    width: 45%;
+}
+
+#goToButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#home">THEORY</a></li>
+            </ul>
+        </div>    
+            <div class="nav-buttons">
+                <a href="home.html" class="btn nav-btn">Log out</a>
+            </div>
+    </nav>
+    
+    <h1>Select an Assessment</h1>
+    
+    <label for="mainDropdown">Choose a category:</label>
+    <select id="mainDropdown" onchange="handleMainDropdown()">
+        <option value="">--Select--</option>
+        <option value="MSE">MSE</option>
+        <option value="CCE">CCE</option>
+        <option value="ESE">ESE</option>
+    </select>
+
+    <div id="cceOptions" style="display:none;">
+        <label for="cceDropdown">Choose an option:</label>
+        <select id="cceDropdown" onchange="handleCCEOptions()">
+            <option value="">--Select--</option>
+            <option value="Rubrics">Rubrics</option>
+            <option value="Attendance">Attendance</option>
+        </select>
+    </div>
+
+    <div id="rubricsOptions" style="display:none;">
+        <div class="rubric-row">
+            <label for="rubric1Dropdown">Choose Rubric 1:</label>
+            <label for="rubric2Dropdown" style="margin-left: 10px;">Choose Rubric 2:</label>
+        </div>
+        <div class="rubric-row">
+            <select id="rubric1Dropdown" onchange="checkDuplicates()">
+                <option value="">--Select--</option>
+                <option value="Presentation">Power Point Presentation</option>
+                <option value="Discussion"> Group Discussion</option>
+                <option value="Seminar">Seminar Presentation</option>
+                <option value="Quiz">Quiz</option>
+                <option value="Case Study">Case Study</option>
+                <option value="Design">Design Thinking</option>
+                <option value="Innovation">Innovation</option>
+            </select>
+    
+            <select id="rubric2Dropdown" onchange="checkDuplicates()">
+                <option value="">--Select--</option>
+                <option value="Presentation">Power Point Presentation</option>
+                <option value="Discussion"> Group Discussion</option>
+                <option value="Seminar">Seminar Presentation</option>
+                <option value="Quiz">Quiz</option>
+                <option value="Case Study">Case Study</option>
+                <option value="Design">Design Thinking</option>
+                <option value="Innovation">Innovation</option>
+            </select> 
+            <p id="errorMessage" style="color:red; display:none;">Please choose different options.</p> 
+        </div>
+       
+    
+        <div class="button-row">
+            <button id="fixButton" onclick="fixChoices()">Fix Choices</button>
+            <button id="resetButton" onclick="resetSelections()">Reset</button>
+        </div>
+    
+        <div id="goToButtons" style="display:none;">
+            <button id="goToRubric1Button" onclick="goToPage('rubric1')">Go to Rubric 1</button>
+            <button id="goToRubric2Button" onclick="goToPage('rubric2')">Go to Rubric 2</button>
+        </div>
+    </div>
+
+    <script>
+        function handleMainDropdown() {
+    const mainDropdown = document.getElementById('mainDropdown');
+    const cceOptions = document.getElementById('cceOptions');
+    const rubricsOptions = document.getElementById('rubricsOptions');
+    const errorMessage = document.getElementById('errorMessage');
+
+    if (mainDropdown.value === 'MSE') {
+        window.location.href = 'mse.html';
+    } else if (mainDropdown.value === 'CCE') {
+        cceOptions.style.display = 'block';
+        rubricsOptions.style.display = 'none';
+        errorMessage.style.display = 'none';
+    } 
+    else if(mainDropdown.value === 'ESE') {
+            window.location.href = 'ese.html';
+    }
+    else {
+        cceOptions.style.display = 'none';
+        rubricsOptions.style.display = 'none';
+    }
+}
+
+function handleCCEOptions() {
+    const cceDropdown = document.getElementById('cceDropdown');
+    const rubricsOptions = document.getElementById('rubricsOptions');
+
+    if (cceDropdown.value === 'Attendance') {
+        window.location.href = 'cceattendance.html';
+    } else if (cceDropdown.value === 'Rubrics') {
+        rubricsOptions.style.display = 'block';
+    } else {
+        rubricsOptions.style.display = 'none';
+    }
+}
+
+function checkDuplicates() {
+    const rubric1 = document.getElementById('rubric1Dropdown').value;
+    const rubric2 = document.getElementById('rubric2Dropdown').value;
+    const errorMessage = document.getElementById('errorMessage');
+    const fixButton = document.getElementById('fixButton');
+
+    if (rubric1 && rubric2 && rubric1 === rubric2) {
+        errorMessage.style.display = 'block';
+        fixButton.disabled = true;
+    } else {
+        errorMessage.style.display = 'none';
+        fixButton.disabled = false;
+    }
+}
+
+function fixChoices() {
+    const goToButtons = document.getElementById('goToButtons');
+    goToButtons.style.display = 'block';
+}
+
+function resetSelections() {
+    document.getElementById('mainDropdown').value = '';
+    document.getElementById('cceDropdown').value = '';
+    document.getElementById('rubric1Dropdown').value = '';
+    document.getElementById('rubric2Dropdown').value = '';
+    document.getElementById('cceOptions').style.display = 'none';
+    document.getElementById('rubricsOptions').style.display = 'none';
+    document.getElementById('errorMessage').style.display = 'none';
+    document.getElementById('goToButtons').style.display = 'none';
+    document.getElementById('fixButton').disabled = false;
+}
+
+function goToPage(rubric) {
+    const rubric1 = document.getElementById('rubric1Dropdown').value;
+    const rubric2 = document.getElementById('rubric2Dropdown').value;
+    let selectedRubric;
+
+    if (rubric === 'rubric1') {
+        selectedRubric = rubric1;
+    } else {
+        selectedRubric = rubric2;
+    }
+
+    switch (selectedRubric) {
+        case 'Presentation':
+            window.location.href = 'presentation.html';
+            break;
+        case 'Discussion':
+            window.location.href = 'discussion.html';
+            break;
+        case 'Seminar':
+            window.location.href = 'seminar.html';
+            break;
+        case 'Quiz':
+            window.location.href = 'quiz.html';
+            break;
+        case 'Case Study':
+            window.location.href = 'casestudy.html';
+            break;
+        case 'Design':
+            window.location.href = 'design.html';
+            break;
+        case 'Innovation':
+            window.location.href = 'innovation.html';
+            break;
+        default:
+            break;
+    }
+}
+
+    </script>
+</body>
+</html>
